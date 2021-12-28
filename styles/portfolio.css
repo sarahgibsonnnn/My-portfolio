@@ -12,7 +12,18 @@ h1 {
     font-family: var(--primary-heading-font);
     font-weight: SemiBold;
     color: white;
+    font-size: 80px;
 
+}
+
+h3 {
+    font-size: 40px;
+    color: white;
+}
+
+.section {
+    background: #023859;
+   
 }
 
 a {
@@ -49,25 +60,25 @@ body{
 .hero {
     text-align: center;
     background: var(--secondary-colour);
-    padding: 100px 100px
+    padding: 100px 100px;
 }
 
 p {
-    color: white;
+    color: #3c3c3b;
     font-family: var(--content-font);
     font-size: 16px;
     text-align: left;
 }
 
 .example {
-    background: #F27649;
+    background: white;
     padding: 20px;
-    border-radius:3px;
+    border-radius:10px;
     margin: 20px 0;
    }
 
 .example h2 {
-    color: white;
+    color: #F28907;
        font-size: 34px;
 }
 
@@ -91,8 +102,8 @@ p {
 }
 
 img {
-    border-radius: 5px;
-    border: 5px white solid;
+    border-radius: 0px;
+  
     box-shadow: var(--image-shadow)
 }
 
