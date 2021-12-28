@@ -1,3 +1,41 @@
+:root {
+    --heading-font: 'Poppins', sans-serif;
+    --default-font: 'Open Sans Condensed', sans-serif;
+    --bs-body-font-family: 'Open Sans Condensed', sans-serif;
+    --primary-colour: #F28907;
+    --secondary-colour: #0D6BA6;
+    --background-color: white;
+}
+
 h1 {
-    color: red
+    font-family: var(--heading-font);
+    color: white;
+
+}
+
+.hero h2 {
+    color: whitesmoke;
+}
+body{
+    font-family: var(--default-font);
+    background: var(--background-color);
+    
+}
+
+.hero-buttons .btn {
+ background: var(--primary-colour);
+ border-radius: 4px;
+ padding: 15px 30px;
+ margin: 0 10px;
+ color: white;
+}
+
+.hero-buttons .btn:hover {
+    background: #F29F05;
+}
+
+.hero {
+    text-align: center;
+    background: var(--secondary-colour);
+    padding: 100px 100px
 }
