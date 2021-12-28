@@ -53,7 +53,7 @@ body{
 }
 
 p {
-    color: #023859;
+    color: white;
     font-family: var(--content-font);
     font-size: 16px;
     text-align: left;
@@ -67,7 +67,8 @@ p {
    }
 
 .example h2 {
-    color: #023859
+    color: white;
+       font-size: 34px;
 }
 
 .example a {
