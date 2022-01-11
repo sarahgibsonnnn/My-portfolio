@@ -23,6 +23,14 @@ h3 {
 
 .section {
     background: #023859;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.subsection {
+    background: #F27649;
    
 }
 
@@ -63,12 +71,22 @@ body{
     padding: 100px 100px;
 }
 
-p {
+p,ul {
     color: #3c3c3b;
     font-family: var(--content-font);
     font-size: 16px;
     text-align: left;
 }
+
+footer a {
+    text-decoration: none;
+    color: #3c3c3b;
+}
+
+footer a:hover{
+    color: var(--secondary-colour);
+}
+
 
 .example {
     background: white;
@@ -81,7 +99,10 @@ p {
     color: #F28907;
        font-size: 34px;
 }
-
+.skills h2 {
+    color: #F28907;
+       font-size: 34px;
+}
 .example a {
   
     background: #023859;
@@ -101,10 +122,38 @@ p {
     
 }
 
+.skill-example,.socials{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0
+}
+
+footer {
+    background: #F27649;
+    padding: 60px 200px;
+     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 img {
     border-radius: 0px;
   
     box-shadow: var(--image-shadow)
+}
+.socials i {
+    color: whitesmoke;
+    margin: 10px;
+    }
+.skill-example i {
+    color: #0D6BA6;
+    margin: 20px;
 }
 
 @media (max-width: 568px) {
