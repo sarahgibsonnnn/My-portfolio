@@ -4,6 +4,7 @@
     --content-font: 'Quicksand', sans-serif;
     --primary-colour: #F28907;
     --secondary-colour: #0D6BA6;
+    --content-colour: #023859;
     --background-color: white;
     --image-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -20,6 +21,42 @@ h3 {
     font-size: 40px;
     color: white;
 }
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+nav li {
+    display: inline;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav ul {
+    margin: 0
+}
+nav {
+    padding: 20px;
+   
+}
+
+nav .menu-option{
+    text-decoration: none;
+    margin: 10px;
+    color: #023859;
+    transition: all 0.1s ease-in;
+    
+}
+
+nav .menu-option:hover, nav  .active{
+    
+    color:#F27649;
+    
+}
+
 
 .section {
     background: #023859;
@@ -72,7 +109,7 @@ body{
 }
 
 p,ul {
-    color: #3c3c3b;
+    color: var(--content-colour);
     font-family: var(--content-font);
     font-size: 16px;
     text-align: left;
@@ -80,7 +117,7 @@ p,ul {
 
 .contact a {
     text-decoration: none;
-    color: #3c3c3b;
+    color:var(--content-colour);
 }
 
 .contact a:hover{
@@ -100,11 +137,7 @@ p,ul {
     margin: 20px 0;
    }
 
-.example h2 {
-    color: #F28907;
-       font-size: 34px;
-}
-.skills h2 {
+.skills h2, .example h2 {
     color: #F28907;
        font-size: 34px;
 }
@@ -145,7 +178,7 @@ p,ul {
     align-items: center;
     text-decoration: none;
     border-radius: 5px;
-    color: #3c3c3b;
+    color: var(--content-colour);
     padding: 10px 30px;
     transition: all ease-in-out 0.2s
 }
@@ -196,7 +229,7 @@ img {
         width: 100%;
     }
 
-    .example p {
+    .example p, .work-example h2 {
         text-align: center;
     }
 
@@ -221,5 +254,23 @@ img {
 
     .example h2 {
         font-size: 24px
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    nav li {
+        line-height: 30px;
+        font-size: 14px;
+       
+    }
+    nav {
+        padding:10px
+    }
+
+    .contact-page a{
+        min-width: 0;
     }
 }
