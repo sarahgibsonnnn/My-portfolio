@@ -34,8 +34,12 @@ h6 {
     border-radius: 50%;
 }
 
-body {
+
+body{
+    font-family: var(--secondary-heading-font);
+    background: var(--background-color);
     padding-top: 91px;
+    
 }
 
 nav li {
@@ -93,11 +97,7 @@ a {
 .hero h2 {
     color: whitesmoke;
 }
-body{
-    font-family: var(--secondary-heading-font);
-    background: var(--background-color);
-    
-}
+
 
 .hero-buttons {
     display: flex;
@@ -227,6 +227,12 @@ footer {
 
 .signature i {
     color: var(--content-colour)
+}
+
+h6 a{
+    text-decoration: none;
+    font-family: var(--secondary-heading-font);
+    color:var(--secondary-colour)
 }
 
 .contact {
