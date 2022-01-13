@@ -28,6 +28,10 @@ h3 {
     border-radius: 50%;
 }
 
+body {
+    padding-top: 91px;
+}
+
 nav li {
     display: inline;
     line-height: 50px;
@@ -40,6 +44,11 @@ nav ul {
 }
 nav {
     padding: 20px;
+    position: fixed;
+    top: 0;
+    background: white;
+    width: 100%;
+    box-shadow: var(--image-shadow)
    
 }
 
@@ -272,5 +281,9 @@ img {
 
     .contact-page a{
         min-width: 0;
+    }
+
+    body{
+        padding-top: 50px;
     }
 }
