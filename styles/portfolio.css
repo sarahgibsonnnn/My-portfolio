@@ -307,4 +307,8 @@ img {
     body{
         padding-top: 50px;
     }
+
+    .signature {
+        display: none
+    }
 }
