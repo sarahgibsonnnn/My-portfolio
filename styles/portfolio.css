@@ -103,7 +103,7 @@ footer a:hover{
     color: #F28907;
        font-size: 34px;
 }
-.example a {
+.example a, .example-desc a{
   
     background: #023859;
     color: white;
@@ -121,6 +121,8 @@ footer a:hover{
     align-items: start;
     
 }
+
+
 
 .skill-example,.socials{
     display:flex;
