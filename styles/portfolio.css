@@ -103,7 +103,7 @@ footer a:hover{
     color: #F28907;
        font-size: 34px;
 }
-.example a, .example-desc a{
+.example .btn, .example-desc .btn{
   
     background: #023859;
     color: white;
@@ -129,6 +129,30 @@ footer a:hover{
     flex-direction: column;
     align-items: center;
 }
+
+.work-example img{
+    height: 300px;
+}
+
+.work-example a{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #3c3c3b;
+    padding: 10px 30px;
+    transition: all ease-in-out 0.2s
+}
+
+.work-example a:hover {
+    color: white;
+}
+
+a p {
+    color: inherit;
+}
+
 
 ul {
     list-style: none;
@@ -173,5 +197,24 @@ img {
 
     .hero-buttons .btn {
         padding: 5px 10px;
+    }
+
+    footer p {
+        display: none;
+    }
+    footer{
+        padding: 20px;
+    }
+
+    .hero{
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
+    .example h2 {
+        font-size: 24px
     }
 }
