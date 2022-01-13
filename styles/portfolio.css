@@ -78,13 +78,18 @@ p,ul {
     text-align: left;
 }
 
-footer a {
+.contact a {
     text-decoration: none;
     color: #3c3c3b;
 }
 
-footer a:hover{
-    color: var(--secondary-colour);
+.contact a:hover{
+    color: white;
+}
+
+
+.contact-page a {
+    min-width: 300px;
 }
 
 
@@ -199,10 +204,10 @@ img {
         padding: 5px 10px;
     }
 
-    footer p {
+    .contact p {
         display: none;
     }
-    footer{
+    .contact{
         padding: 20px;
     }
 
