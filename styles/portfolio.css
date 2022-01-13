@@ -311,4 +311,8 @@ img {
     .signature {
         display: none
     }
+
+    footer{
+        padding: 0
+    }
 }
