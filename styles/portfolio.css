@@ -257,6 +257,11 @@ img {
     margin: 20px;
 }
 
+.skill-example li {
+    font-size: 12px;
+    text-align: center
+}
+
 @media (max-width: 568px) {
     .example-desc {
         align-items: center
