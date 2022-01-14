@@ -231,6 +231,7 @@ footer {
 
 h6 a{
     text-decoration: none;
+    font-weight: bold;
     font-family: var(--secondary-heading-font);
     color:var(--secondary-colour)
 }
@@ -273,7 +274,7 @@ img {
         padding: 5px 10px;
     }
 
-    .contact p {
+    .contact p, .socials h4 {
         display: none;
     }
     .contact{
