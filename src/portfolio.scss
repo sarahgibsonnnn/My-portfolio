@@ -448,12 +448,24 @@ nav {
   @include flex-center;
   flex-direction: row;
   justify-content: space-evenly;
+  gap: 2rem;
 
   @include mobile {
-    padding: 20px;
+    padding: 20px 10px;
+    flex-direction: column;
+    gap: 1.5rem;
 
     p {
       display: none;
+    }
+  }
+  
+  // Tablet responsiveness
+  @media (max-width: 768px) and (min-width: 577px) {
+    gap: 1rem;
+    
+    p {
+      font-size: 0.9rem;
     }
   }
 
@@ -477,15 +489,51 @@ nav {
 
 .socials {
   @include flex-column-center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
 
   i {
     color: map.get($colors, whitesmoke);
     margin: 10px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   @include mobile {
+    padding: 1rem;
+    min-width: 120px;
+    
     h4 {
       display: none;
+    }
+    
+    i {
+      margin: 5px;
+      font-size: 1.8rem;
+    }
+    
+    p {
+      font-size: 0.8rem;
+      margin: 0.5rem 0 0 0;
+      text-align: center;
+      word-break: break-word;
+    }
+  }
+  
+  // Tablet responsiveness
+  @media (max-width: 768px) and (min-width: 577px) {
+    i {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      font-size: 0.85rem;
     }
   }
 }
@@ -496,16 +544,47 @@ footer {
   padding: 60px 200px;
 
   @include mobile {
-    padding: 0;
+    padding: 30px 20px;
+  }
+  
+  // Tablet responsiveness
+  @media (max-width: 768px) and (min-width: 577px) {
+    padding: 40px 50px;
   }
 }
 
 .signature {
   @include flex-center;
   flex-direction: row;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 
   @include mobile {
-    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+    
+    h6 {
+      font-size: 0.8rem;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0 1rem;
+    }
+    
+    i {
+      display: none;
+    }
+  }
+  
+  // Tablet responsiveness
+  @media (max-width: 768px) and (min-width: 577px) {
+    h6 {
+      font-size: 0.9rem;
+    }
   }
 
   i {

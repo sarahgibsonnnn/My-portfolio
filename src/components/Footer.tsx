@@ -9,8 +9,8 @@ export default function Footer() {
           className="socials btn"
         >
           <i className="fab fa-linkedin fa-2x"></i>
-          <h4 className="d-none d-sm-block">Linked In</h4>
-          <p>sarah-gibson9</p>
+          <h4 className="d-none d-md-block">LinkedIn</h4>
+          <p className="d-none d-sm-block">sarah-gibson9</p>
         </a>
         
         <a 
@@ -20,8 +20,8 @@ export default function Footer() {
           className="socials btn"
         >
           <i className="fas fa-at fa-2x"></i>
-          <h4 className="d-none d-sm-block">Email</h4>
-          <p>sarahalgibson95@gmail.com</p>
+          <h4 className="d-none d-md-block">Email</h4>
+          <p className="d-none d-sm-block">sarahalgibson95@gmail.com</p>
         </a>
 
         <a 
@@ -31,8 +31,8 @@ export default function Footer() {
           className="socials btn"
         >
           <i className="fas fa-certificate fa-2x"></i>
-          <h4 className="d-none d-sm-block">Certificates</h4>
-          <p>SheCodes Profile</p>
+          <h4 className="d-none d-md-block">Certificates</h4>
+          <p className="d-none d-sm-block">SheCodes Profile</p>
         </a>
       </div>
       
