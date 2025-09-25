@@ -1,0 +1,1160 @@
+@use 'sass:map';
+@use 'sass:color';
+
+// SCSS Variables
+$fonts: (
+  primary-heading: ('Poppins', sans-serif),
+  secondary-heading: ('Open Sans Condensed', sans-serif),
+  content: ('Quicksand', sans-serif)
+);
+
+$colors: (
+  primary: #F28907,
+  primary-hover: #F29F05,
+  secondary: #0D6BA6,
+  content: #023859,
+  background: white,
+  accent: #F27649,
+  white: white,
+  whitesmoke: whitesmoke
+);
+
+$shadows: (
+  image: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
+);
+
+$breakpoints: (
+  mobile: 568px
+);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin button-base {
+  border-radius: 4px;
+  padding: 15px 30px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+@mixin mobile {
+  @media (max-width: map.get($breakpoints, mobile)) {
+    @content;
+  }
+}
+
+// Base styles
+body {
+  font-family: map.get($fonts, secondary-heading);
+  background: map.get($colors, background);
+  padding-top: 91px;
+
+  @include mobile {
+    padding-top: 50px;
+  }
+}
+
+// Typography
+h1 {
+  font-family: map.get($fonts, primary-heading);
+  font-weight: 600;
+  color: map.get($colors, white);
+  font-size: 80px;
+
+  @include mobile {
+    font-size: 44px;
+  }
+}
+
+h3 {
+  font-size: 40px;
+  color: map.get($colors, white);
+}
+
+h6 {
+  color: map.get($colors, content);
+  padding: 0;
+  margin: 20px;
+}
+
+p, ul {
+  color: map.get($colors, content);
+  font-family: map.get($fonts, content);
+  font-size: 16px;
+  text-align: left;
+}
+
+a {
+  font-family: map.get($fonts, primary-heading);
+
+  p {
+    color: inherit;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+// Components
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  @include mobile {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+// Navigation
+nav {
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  background: map.get($colors, white);
+  width: 100%;
+  box-shadow: map.get($shadows, image);
+  z-index: 1000;
+
+  @include mobile {
+    padding: 10px;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    display: inline;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+
+    @include mobile {
+      line-height: 30px;
+      font-size: 14px;
+    }
+  }
+
+  .menu-option {
+    text-decoration: none;
+    margin: 10px;
+    color: map.get($colors, content);
+    transition: all 0.1s ease-in;
+
+    &:hover,
+    &.active {
+      color: map.get($colors, accent);
+    }
+  }
+}
+
+// Hero section
+.hero {
+  text-align: center;
+  background: map.get($colors, secondary);
+  padding: 20px 100px;
+
+  @include mobile {
+    padding: 20px;
+  }
+
+  h2 {
+    color: map.get($colors, whitesmoke);
+  }
+}
+
+.hero-buttons {
+  @include flex-center;
+  flex-direction: row;
+
+  .btn {
+    @include button-base;
+    background: map.get($colors, primary);
+    color: map.get($colors, white);
+
+    &:hover {
+      background: map.get($colors, primary-hover);
+    }
+
+    @include mobile {
+      padding: 5px 10px;
+    }
+  }
+}
+
+// Sections
+.section {
+  background: map.get($colors, content);
+  @include flex-column-center;
+  
+  .work-intro {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+    
+    p {
+      color: map.get($colors, whitesmoke);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}
+
+.subsection {
+  background: map.get($colors, accent);
+}
+
+// Examples and work
+.example {
+  background: map.get($colors, white);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+
+  h2 {
+    color: map.get($colors, primary);
+    font-size: 34px;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  .btn {
+    background: map.get($colors, content);
+    color: map.get($colors, white);
+  }
+
+  a:hover {
+    background: map.get($colors, secondary);
+    color: map.get($colors, white);
+  }
+
+  @include mobile {
+    a {
+      width: 100%;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.example-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+
+  @include mobile {
+    align-items: center;
+  }
+
+  .btn {
+    background: map.get($colors, content);
+    color: map.get($colors, white);
+  }
+}
+
+// Skills
+.skills {
+  h2 {
+    color: map.get($colors, primary);
+    font-size: 34px;
+  }
+}
+
+.skill-example {
+  @include flex-column-center;
+
+  i {
+    color: map.get($colors, secondary);
+    margin: 20px;
+  }
+
+  li {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+// Work examples - Enhanced UX Portfolio Design
+.work-example {
+  margin-bottom: 2rem;
+
+  .work-card {
+    background: map.get($colors, white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: map.get($shadows, image);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+  }
+
+  .work-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 0;
+  }
+
+  .category-badge {
+    background: map.get($colors, primary);
+    color: map.get($colors, white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .year-badge {
+    background: map.get($colors, secondary);
+    color: map.get($colors, white);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .work-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work-image-container {
+    position: relative;
+    overflow: hidden;
+    
+    .work-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .work-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(map.get($colors, secondary), 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .view-project {
+      color: map.get($colors, white);
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    &:hover {
+      .work-image {
+        transform: scale(1.05);
+      }
+      
+      .work-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .work-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      color: map.get($colors, content);
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    p {
+      color: color.adjust(map.get($colors, content), $lightness: 20%);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    justify-content: center;
+  }
+
+
+
+  @include mobile {
+    .work-content h2 {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    
+    .work-image-container .work-image {
+      height: 200px;
+    }
+    
+    .skills-container {
+      justify-content: center;
+    }
+  }
+}
+
+// Contact and social
+.contact {
+  @include flex-center;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  @include mobile {
+    padding: 20px;
+
+    p {
+      display: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: map.get($colors, content);
+
+    &:hover {
+      color: map.get($colors, white);
+    }
+  }
+
+  &-page a {
+    min-width: 300px;
+
+    @include mobile {
+      min-width: 0;
+    }
+  }
+}
+
+.socials {
+  @include flex-column-center;
+
+  i {
+    color: map.get($colors, whitesmoke);
+    margin: 10px;
+  }
+
+  @include mobile {
+    h4 {
+      display: none;
+    }
+  }
+}
+
+// Footer
+footer {
+  background: map.get($colors, accent);
+  padding: 60px 200px;
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.signature {
+  @include flex-center;
+  flex-direction: row;
+
+  @include mobile {
+    display: none;
+  }
+
+  i {
+    color: map.get($colors, content);
+  }
+}
+
+// Images
+img {
+  border-radius: 0px;
+  box-shadow: map.get($shadows, image);
+}
+
+// Links in signature
+h6 a {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: map.get($fonts, secondary-heading);
+  color: map.get($colors, secondary);
+}
+
+// Enhanced About Page Styles
+.btn-outline {
+  background: transparent;
+  color: map.get($colors, primary);
+  border: 2px solid map.get($colors, primary);
+  
+  &:hover {
+    background: map.get($colors, primary);
+    color: map.get($colors, white);
+  }
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: map.get($colors, white);
+  border: 2px solid map.get($colors, white);
+  
+  &:hover {
+    background: map.get($colors, white);
+    color: map.get($colors, primary);
+  }
+}
+
+.experience-card {
+  background: map.get($colors, white);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  height: 100%;
+  box-shadow: map.get($shadows, image);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  .experience-icon {
+    margin-bottom: 1rem;
+    
+    i {
+      color: map.get($colors, primary);
+    }
+  }
+  
+  h4 {
+    color: map.get($colors, content);
+    margin-bottom: 0.5rem;
+  }
+  
+  .experience-role {
+    color: map.get($colors, primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: color.adjust(map.get($colors, content), $lightness: 15%);
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.career-timeline {
+  position: relative;
+  padding-left: 2rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, map.get($colors, primary), map.get($colors, secondary));
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    background: map.get($colors, white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: map.get($shadows, image);
+    margin-left: 2rem;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: -3rem;
+      top: 2rem;
+      width: 12px;
+      height: 12px;
+      background: map.get($colors, primary);
+      border-radius: 50%;
+      border: 3px solid map.get($colors, white);
+      box-shadow: 0 0 0 3px map.get($colors, primary);
+    }
+    
+    &.current::before {
+      background: map.get($colors, secondary);
+      box-shadow: 0 0 0 3px map.get($colors, secondary);
+      animation: pulse 2s infinite;
+    }
+    
+    .timeline-date {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      
+      .date-range {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: map.get($colors, primary);
+      }
+      
+      .duration {
+        font-size: 0.8rem;
+        color: color.adjust(map.get($colors, content), $lightness: 30%);
+        font-style: italic;
+      }
+    }
+    
+    .timeline-content {
+      h4 {
+        color: map.get($colors, content);
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+      }
+      
+      .company {
+        color: map.get($colors, secondary);
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        color: color.adjust(map.get($colors, content), $lightness: 15%);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
+    .achievement-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .achievement-tag {
+      background: color.adjust(map.get($colors, primary), $lightness: 45%);
+      color: map.get($colors, primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid color.adjust(map.get($colors, primary), $lightness: 30%);
+    }
+  }
+  
+  .timeline-milestone {
+    position: relative;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    
+    .milestone-icon {
+      position: absolute;
+      left: -3.5rem;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: map.get($colors, accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid map.get($colors, white);
+      box-shadow: 0 0 0 3px map.get($colors, accent);
+      
+      i {
+        font-size: 0.7rem;
+        color: map.get($colors, white);
+      }
+    }
+    
+    .milestone-content {
+      background: color.adjust(map.get($colors, accent), $lightness: 45%);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid map.get($colors, accent);
+      
+      h5 {
+        color: map.get($colors, accent);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      
+      p {
+        color: color.adjust(map.get($colors, content), $lightness: 10%);
+        margin: 0;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 3px map.get($colors, secondary);
+  }
+  50% {
+    box-shadow: 0 0 0 8px color.adjust(map.get($colors, secondary), $alpha: -0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 3px map.get($colors, secondary);
+  }
+}
+
+.education-timeline {
+  position: relative;
+  
+  .timeline-item {
+    display: flex;
+    margin-bottom: 2rem;
+    
+    .timeline-icon {
+      width: 60px;
+      height: 60px;
+      background: map.get($colors, primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 2rem;
+      flex-shrink: 0;
+      
+      i {
+        color: map.get($colors, white);
+        font-size: 1.5rem;
+      }
+    }
+    
+    .timeline-content {
+      flex: 1;
+      
+      h4 {
+        color: map.get($colors, content);
+        margin-bottom: 0.5rem;
+      }
+      
+      .text-muted {
+        color: map.get($colors, primary) !important;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      p {
+        color: color.adjust(map.get($colors, content), $lightness: 15%);
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.skill-category {
+  background: map.get($colors, white);
+  border-radius: 12px;
+  padding: 2rem;
+  height: 100%;
+  box-shadow: map.get($shadows, image);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
+  
+  .skill-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    i {
+      color: map.get($colors, secondary);
+      margin-bottom: 1rem;
+    }
+    
+    h4 {
+      color: map.get($colors, content);
+      margin: 0;
+    }
+  }
+  
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  
+  .skill-badge {
+    background: color.adjust(map.get($colors, secondary), $lightness: 45%);
+    color: map.get($colors, secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid color.adjust(map.get($colors, secondary), $lightness: 30%);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    
+    &:hover {
+      background: map.get($colors, secondary);
+      color: map.get($colors, white);
+      transform: scale(1.02);
+      z-index: 2;
+    }
+  }
+}
+
+// Mobile responsiveness for About page
+@include mobile {
+  .experience-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .career-timeline {
+    padding-left: 1rem;
+    
+    &::before {
+      left: 0.5rem;
+    }
+    
+    .timeline-item {
+      margin-left: 1rem;
+      padding: 1.5rem;
+      
+      &::before {
+        left: -1.75rem;
+      }
+    }
+    
+    .timeline-milestone {
+      margin-left: 1rem;
+      
+      .milestone-icon {
+        left: -2rem;
+      }
+    }
+  }
+  
+  .timeline-item {
+    .timeline-icon {
+      width: 50px;
+      height: 50px;
+      margin-right: 1rem;
+    }
+  }
+  
+  .skill-category {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .skill-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .achievement-tags {
+    justify-content: center;
+  }
+}
+
+// App Embedding - Homepage Integration
+.app-embed-section {
+  background: map.get($colors, white);
+  padding: 3rem 0;
+  
+  @include mobile {
+    padding: 2rem 0;
+  }
+
+  // Specific styling for different apps
+  &.holiday-planner-embed {
+    .app-embed-container {
+      border: 2px solid map.get($colors, primary);
+    }
+  }
+
+  &.dictionary-embed {
+    background: color.adjust(map.get($colors, background), $lightness: -2%);
+    
+    .app-embed-container {
+      border: 2px solid map.get($colors, secondary);
+    }
+    
+    .app-embed-title {
+      color: map.get($colors, secondary);
+    }
+
+    .iframe-overlay {
+      background: rgba(map.get($colors, secondary), 0.9);
+    }
+
+    .skill-tag {
+      background: color.adjust(map.get($colors, secondary), $lightness: 40%);
+      color: map.get($colors, secondary);
+      border: 1px solid map.get($colors, secondary);
+    }
+  }
+}
+
+.app-embed-title {
+  color: map.get($colors, primary);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+.app-embed-description {
+  color: map.get($colors, content);
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.app-embed-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 70vh;
+  min-height: 500px;
+  margin: 0 auto 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  background: map.get($colors, white);
+
+  @include mobile {
+    height: 60vh;
+    min-height: 400px;
+    margin: 0 1rem 1rem;
+    border-radius: 12px;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    transition: all 0.3s ease;
+    
+    .iframe-overlay {
+      opacity: 0;
+    }
+  }
+}
+
+.app-embed-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+  
+  @include mobile {
+    border-radius: 12px;
+  }
+}
+
+.iframe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(map.get($colors, primary), 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  
+  .overlay-content {
+    text-align: center;
+    color: map.get($colors, white);
+    
+    h4 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      background: map.get($colors, white);
+      color: map.get($colors, primary);
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
+    }
+  }
+}
+
+.app-embed-details {
+  .skills-container {
+    margin-bottom: 1rem;
+    
+    .skill-tag {
+      margin: 0.25rem;
+      background: color.adjust(map.get($colors, primary), $lightness: 40%);
+      color: map.get($colors, primary);
+      border: 1px solid map.get($colors, primary);
+    }
+  }
+  
+  p {
+    color: color.adjust(map.get($colors, content), $lightness: 20%);
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+// Unified Skill Tag System - Reusable Component
+.skill-tag {
+  display: inline-block;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  
+  // Size variants
+  &.size-small {
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+  
+  &.size-medium {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  &.size-large {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  
+  // Color variants
+  &.variant-primary {
+    background: linear-gradient(135deg, map.get($colors, primary) 0%, color.adjust(map.get($colors, primary), $lightness: 15%) 100%);
+    color: map.get($colors, white);
+    border: 1px solid map.get($colors, primary);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px color.adjust(map.get($colors, primary), $alpha: -0.7);
+      z-index: 2;
+    }
+  }
+  
+  &.variant-secondary {
+    background: linear-gradient(135deg, map.get($colors, secondary) 0%, color.adjust(map.get($colors, secondary), $lightness: 15%) 100%);
+    color: map.get($colors, white);
+    border: 1px solid map.get($colors, secondary);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px color.adjust(map.get($colors, secondary), $alpha: -0.7);
+      z-index: 2;
+    }
+  }
+  
+  &.variant-accent {
+    background: linear-gradient(135deg, map.get($colors, accent) 0%, color.adjust(map.get($colors, accent), $lightness: 15%) 100%);
+    color: map.get($colors, white);
+    border: 1px solid map.get($colors, accent);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px color.adjust(map.get($colors, accent), $alpha: -0.7);
+      z-index: 2;
+    }
+  }
+  
+  &.variant-neutral {
+    background: rgba(255, 255, 255, 0.1);
+    color: map.get($colors, content);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+  }
+  
+  &.variant-light {
+    background: color.adjust(map.get($colors, primary), $lightness: 40%);
+    color: map.get($colors, primary);
+    border: 1px solid map.get($colors, primary);
+    
+    &:hover {
+      background: map.get($colors, primary);
+      color: map.get($colors, white);
+      transform: scale(1.02);
+      z-index: 2;
+    }
+  }
+}
