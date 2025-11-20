@@ -60,6 +60,33 @@ A modern, responsive portfolio website built with React, TypeScript, and Vite. F
 - **Component Architecture** - Reusable components with consistent styling
 - **Professional Presentation** - LinkedIn-aligned about page with achievements
 
+## 🚀 Deployment
+
+This project is configured for easy deployment to multiple platforms:
+
+### GitHub Pages (Automated)
+- **Automatic deployment** when you push to the `main` branch
+- Uses GitHub Actions with Ubuntu 24.04 and Node.js 20
+- Builds and deploys to GitHub Pages automatically
+
+### Manual Deployment Options
+1. **Build the project:**
+   ```bash
+   npm run build
+   # or use: build.bat (Windows)
+   ```
+
+2. **Deploy the `dist` folder to your hosting platform:**
+   - **Netlify**: Drag `dist` folder or connect GitHub repo
+   - **Vercel**: Connect GitHub repo or use Vercel CLI
+   - **Traditional hosting**: Upload `dist` folder contents via FTP
+
+### Hosting Configuration Files Included
+- `netlify.toml` - Netlify configuration with proper MIME types
+- `vercel.json` - Vercel configuration for SPA routing
+- `public/.htaccess` - Apache server configuration
+- `.github/workflows/deploy.yml` - GitHub Pages deployment
+
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
