@@ -87,6 +87,42 @@ This project is configured for easy deployment to multiple platforms:
 - `public/.htaccess` - Apache server configuration
 - `.github/workflows/deploy.yml` - GitHub Pages deployment
 
+## 🔧 Troubleshooting
+
+### Common Deployment Issues
+
+**MIME Type Errors:**
+```
+Failed to load module script: Expected a JavaScript module script but the server responded with MIME type "application/octet-stream"
+```
+- **Solution**: Use the included configuration files (`netlify.toml`, `vercel.json`, `.htaccess`)
+
+**Syntax Errors:**
+```
+Uncaught SyntaxError: missing ) after argument list
+```
+- **Solution**: Check for trailing commas in JSX render calls
+- **Fixed**: Removed extra comma in `main.tsx`
+
+**PowerShell Execution Policy:**
+```
+npm : File cannot be loaded because running scripts is disabled
+```
+- **Solution**: Use `run-dev.bat` or run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+
+### Testing Your Build
+```bash
+# Build for production
+npm run build
+# or: build.bat
+
+# Preview production build locally
+npm run preview
+# or: preview.bat
+
+# Serves at: http://localhost:4173/
+```
+
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
