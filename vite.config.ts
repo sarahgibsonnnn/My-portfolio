@@ -8,7 +8,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    // Ensure proper file extensions
+    sourcemap: false,
+    minify: 'esbuild',
+    // Ensure proper file extensions and cache busting
     rollupOptions: {
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
@@ -16,5 +18,9 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     }
+  },
+  // Ensure proper module resolution
+  esbuild: {
+    target: 'es2020'
   }
 })

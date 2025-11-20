@@ -112,7 +112,10 @@ npm : File cannot be loaded because running scripts is disabled
 
 ### Testing Your Build
 ```bash
-# Build for production
+# Clean build (recommended for deployment)
+clean-build.bat
+
+# Or build normally
 npm run build
 # or: build.bat
 
@@ -122,6 +125,23 @@ npm run preview
 
 # Serves at: http://localhost:4173/
 ```
+
+### Force Deploy New Version
+If you're still seeing old cached errors after fixing issues:
+
+1. **Clean build locally:**
+   ```bash
+   clean-build.bat
+   ```
+
+2. **Upload the NEW dist folder** (completely replace the old one)
+
+3. **Clear browser cache** or test in incognito mode
+
+4. **For hosting platforms:**
+   - **Netlify**: Drag new dist folder or trigger new deploy
+   - **Vercel**: Redeploy from dashboard or push to GitHub
+   - **GitHub Pages**: Commit and push changes to trigger new build
 
 ## React Compiler
 
