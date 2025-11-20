@@ -1,5 +1,4 @@
 import Hero from '../components/Hero';
-import ProjectExample from '../components/ProjectExample';
 import AppEmbed from '../components/AppEmbed';
 
 const heroData = {
@@ -18,29 +17,6 @@ const heroData = {
     }
   ]
 };
-
-const featuredProjects = [
-  {
-    title: "AI Holiday Planner",
-    description: "End-to-end UX design and React development. Conducted user research, created wireframes and prototypes, then built a responsive AI-powered travel planning app with modern UX patterns. Try the live interactive version below!",
-    imageUrl: "/images/holiday-planner.png",
-    imageAlt: "AI Holiday Planner showing user interface and design process",
-    projectUrl: "#interactive-experience",
-    linkText: "Try Interactive Version ↓",
-    linkTitle: "Scroll down to try the interactive holiday planner",
-    imagePosition: "right" as const
-  },
-  {
-    title: "Dictionary App: Information Architecture",
-    description: "Designed intuitive search experience and information hierarchy. Focused on accessibility, progressive disclosure, and API integration patterns for seamless word discovery. Try it live below!",
-    imageUrl: "/images/dictionary-app.PNG",
-    imageAlt: "Dictionary app showing clean interface design and search functionality",
-    projectUrl: "#interactive-experience",
-    linkText: "Try Interactive Version ↓",
-    linkTitle: "Scroll down to try the interactive dictionary app",
-    imagePosition: "right" as const
-  }
-];
 
 export default function Home() {
   return (

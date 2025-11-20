@@ -28,9 +28,17 @@ A modern, responsive portfolio website built with React, TypeScript, and Vite. F
    npm run dev
    ```
    
-   **Option 2: Using the batch file (Windows)**
+   **Option 2: Using the batch file (Windows - if PowerShell blocks npm)**
    ```bash
    run-dev.bat
+   ```
+   
+   **Option 3: If PowerShell execution policy blocks npm, try:**
+   ```powershell
+   # Allow scripts for current user
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   # Then run npm normally
+   npm run dev
    ```
 
 4. **Open your browser:**
