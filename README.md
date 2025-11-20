@@ -1,11 +1,56 @@
-# React + TypeScript + Vite
+# Sarah Gibson's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, and Vite. Features embedded interactive applications, dynamic content, and professional presentation.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Getting Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sarahgibsonnnn/My-portfolio.git
+   cd My-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   
+   **Option 1: Using npm (recommended)**
+   ```bash
+   npm run dev
+   ```
+   
+   **Option 2: Using the batch file (Windows)**
+   ```bash
+   run-dev.bat
+   ```
+
+4. **Open your browser:**
+   Navigate to `http://localhost:5173` (or the port shown in your terminal)
+
+## 🛠️ Available Scripts
+
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality checks
+
+## ✨ Features
+
+- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+- **Interactive Applications** - Embedded holiday planner and dictionary apps
+- **Dynamic Content** - Real-time experience calculations and career timeline
+- **Modern Tech Stack** - React 19, TypeScript, Vite, SCSS
+- **Component Architecture** - Reusable components with consistent styling
+- **Professional Presentation** - LinkedIn-aligned about page with achievements
 
 ## React Compiler
 

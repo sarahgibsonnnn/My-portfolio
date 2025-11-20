@@ -96,14 +96,20 @@ export default function About() {
             <h2>Professional Summary</h2>
             <p>
               <strong>Senior Product Designer and Front-End Developer</strong> with {calculateYearsOfExperience()} years of experience 
-              creating user-centered digital solutions in healthcare and consumer applications. 
+              creating user-centered digital solutions. 
               Currently driving UX innovation in the healthcare sector, designing complex systems 
-              that serve 1000+ healthcare professionals daily.
+              that serve a variety of healthcare professionals daily.
             </p>
             <p>
-              I bridge the gap between design and development, leading projects from user research 
-              and wireframing through to React implementation. My expertise spans the complete 
+              I bridge the gap between users, design and development, leading projects from user research 
+              and wireframing through to implementation. My expertise spans the complete 
               product lifecycle, with a passion for accessible, data-driven design solutions.
+            </p>
+
+            <p>
+              Unfortunately I do not currently have examples of my professional work to share publicly due to 
+              confidentiality agreements. However, I have built several applications during my SheCodes workshops 
+              which you can explore below.
             </p>
             <div className="d-flex gap-2 flex-wrap">
               <Link to="/work" title="View Sarah's work" className="btn">
@@ -147,10 +153,10 @@ export default function About() {
                   <i className="fas fa-users fa-3x"></i>
                 </div>
                 <h4>User-Centered Design</h4>
-                <p className="experience-role">{calculateYearsOfExperience()}+ Years</p>
+                <p className="experience-role">{calculateYearsOfExperience()} Years</p>
                 <p>
-                  Expert in user research, persona development, journey mapping, and usability testing. 
-                  Proven track record of improving conversion rates by 40% through data-driven design decisions.
+                  Experienced in user research, persona development, journey mapping, and usability testing. 
+                  Skilled at translating user insights into intuitive, accessible designs that meet user needs.
                 </p>
               </div>
             </div>
@@ -159,11 +165,11 @@ export default function About() {
                 <div className="experience-icon">
                   <i className="fas fa-code fa-3x"></i>
                 </div>
-                <h4>Full-Stack Development</h4>
+                <h4>Front-end Development</h4>
                 <p className="experience-role">React Specialist</p>
                 <p>
-                  Bridging design and development with modern React applications, API integrations, 
-                  and responsive interfaces that bring UX designs to life with pixel-perfect implementation.
+                  Bridging design and development with experience developing modern React applications, 
+                  and responsive interfaces.
                 </p>
               </div>
             </div>
@@ -179,42 +185,41 @@ export default function About() {
             <div className="career-timeline">
               <div className="timeline-item current">
                 <div className="timeline-date">
-                  <span className="date-range">{formatDateRange(2022, 1)}</span>
-                  <span className="duration">({calculateDuration(2022, 1)})</span>
+                  <span className="date-range">{formatDateRange(2023, 2)}</span>
+                  <span className="duration">({calculateDuration(2023, 2)})</span>
                 </div>
                 <div className="timeline-content">
                   <h4>Senior Product Designer</h4>
-                  <p className="company">Healthcare Sector</p>
+                  <p className="company">Synanetics</p>
                   <p>
-                    Leading UX design for healthcare applications serving 1000+ professionals. 
-                    Conducting stakeholder interviews, creating complex data interfaces, and 
+                    Leading UX design for healthcare applications serving various clinical professionals in the NHS. Experience in designing Share Care Records, patient management applications, and patient demographic matching engines. 
+                    Conducting user research, designing complex interfaces, and 
                     improving patient outcomes through user-centered design.
                   </p>
                   <div className="achievement-tags">
-                    <span className="achievement-tag">Enterprise UX</span>
-                    <span className="achievement-tag">Healthcare Systems</span>
-                    <span className="achievement-tag">Stakeholder Management</span>
+                    <span className="achievement-tag">Product design</span>
+                    <span className="achievement-tag">End-to-end process</span>
+                    <span className="achievement-tag">Healthcare</span>
                   </div>
                 </div>
               </div>
               
               <div className="timeline-item">
                 <div className="timeline-date">
-                  <span className="date-range">{formatDateRange(2018, 10, 2021, 12)}</span>
-                  <span className="duration">({calculateDuration(2018, 10, 2021, 12)})</span>
+                  <span className="date-range">{formatDateRange(2018, 10, 2023, 2)}</span>
+                  <span className="duration">({calculateDuration(2018, 10, 2023, 2)})</span>
                 </div>
                 <div className="timeline-content">
                   <h4>UX/UI Designer & Developer</h4>
-                  <p className="company">Various Industries</p>
+                  <p className="company">Phixflow</p>
                   <p>
-                    Developed expertise in full-stack UX design and front-end development. 
-                    Created user-centered solutions across travel, consumer applications, 
-                    and e-commerce platforms with proven 40% conversion rate improvements.
+                    Designed and developed applications for various industries using a low code application development platform.
+                    Led end-to-end design processes from user research to implementation
                   </p>
                   <div className="achievement-tags">
-                    <span className="achievement-tag">User Research</span>
-                    <span className="achievement-tag">React Development</span>
-                    <span className="achievement-tag">Conversion Optimization</span>
+                    <span className="achievement-tag">UX Design</span>
+                    <span className="achievement-tag">Development</span>
+                    <span className="achievement-tag">Low code applications</span>
                   </div>
                 </div>
               </div>

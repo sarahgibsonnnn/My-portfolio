@@ -31,16 +31,6 @@ const featuredProjects = [
     imagePosition: "right" as const
   },
   {
-    title: "FlyUX: Airline Booking Experience", 
-    description: "Complete UX design process for airline booking platform. User research, personas, journey mapping, wireframing, prototyping, and usability testing resulted in a 40% improvement in conversion rates.",
-    imageUrl: "/images/flyux.PNG",
-    imageAlt: "FlyUX design process showing wireframes, user flows, and final interface",
-    projectUrl: "https://xd.adobe.com/view/1c2df129-2117-4280-b340-f4ed402257fc-497e/?fullscreen&hints=on",
-    linkText: "View UX Process",
-    linkTitle: "View UX design process",
-    imagePosition: "left" as const
-  },
-  {
     title: "Dictionary App: Information Architecture",
     description: "Designed intuitive search experience and information hierarchy. Focused on accessibility, progressive disclosure, and API integration patterns for seamless word discovery. Try it live below!",
     imageUrl: "/images/dictionary-app.PNG",
@@ -63,10 +53,10 @@ export default function Home() {
 
       {/* Interactive Applications Section */}
       <div className="section" id="interactive-experience">
-        <h3 className="text-center p-3">Some of my applications</h3>
+        <h3 className="text-center p-3">Some of my applications outside of work</h3>
         <div className="work-intro">
           <p className="text-center text-light">
-            Experience my applications directly - no need to leave this page! Click to interact with live, fully-functional projects.
+            Experience my applications directly - no need to leave this page! Click to interact with live, fully-functional projects completed during my SheCodes workshops.
           </p>
         </div>
       </div>
