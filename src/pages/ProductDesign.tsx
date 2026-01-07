@@ -4,7 +4,13 @@ import Button from '../components/Button';
 const productDesignHeroData = {
   title: "Product Design",
   subtitle: "End-to-end product design case studies — from discovery and research to delivery and iteration",
-  
+  buttons: [
+    {
+      text: "Contact Me",
+      link: "/contact",
+      title: "Contact Sarah"
+    }
+  ]
 };
 
 const caseStudies = [
@@ -48,6 +54,7 @@ export default function ProductDesign() {
       <Hero 
         title={productDesignHeroData.title}
         subtitle={productDesignHeroData.subtitle}
+        buttons={productDesignHeroData.buttons}
       />
 
       <div className="section">

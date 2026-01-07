@@ -2,7 +2,7 @@ import Hero from '../components/Hero';
 import AppEmbed from '../components/AppEmbed';
 
 const workHeroData = {
-  title: "Front-end Development",
+  title: "From Design to Code",
   subtitle: "Interactive applications and coding projects",
   buttons: [
     {

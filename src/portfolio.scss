@@ -487,22 +487,270 @@ nav {
   }
 }
 
+// Enhanced Contact Page Styles
+.contact-page-wrapper {
+  background: map.get($colors, background);
+  padding: 4rem 0;
+  min-height: 80vh;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+  
+  h3 {
+    color: map.get($colors, content);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+  
+  .lead-text {
+    color: map.get($colors, content);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    
+    @include mobile {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.contact-methods {
+  margin-bottom: 4rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  background: rgba(map.get($colors, white), 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  text-decoration: none;
+  color: map.get($colors, content);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: map.get($colors, content);
+    
+    &::before {
+      left: 100%;
+    }
+    
+    .card-icon i {
+      transform: scale(1.2);
+    }
+    
+    .card-arrow {
+      transform: translateX(10px);
+      opacity: 1;
+    }
+  }
+  
+  .card-icon {
+    margin-right: 1.5rem;
+    
+    i {
+      font-size: 2.5rem;
+      transition: all 0.3s ease;
+    }
+  }
+  
+  .card-content {
+    flex: 1;
+    
+    h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: map.get($colors, content);
+    }
+    
+    p {
+      margin: 0 0 0.5rem 0;
+      color: color.adjust(map.get($colors, content), $lightness: 20%);
+      font-size: 1rem;
+    }
+    
+    .card-handle {
+      font-size: 0.9rem;
+      color: color.adjust(map.get($colors, content), $lightness: 30%);
+      font-weight: 500;
+    }
+  }
+  
+  .card-arrow {
+    margin-left: 1rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    
+    i {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    
+    .card-icon {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+    
+    .card-arrow {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.linkedin-card .card-icon i {
+  color: #0077B5;
+}
+
+.email-card .card-icon i {
+  color: map.get($colors, secondary);
+}
+
+.certificates-card .card-icon i {
+  color: map.get($colors, primary);
+}
+
+.contact-cta {
+  background: linear-gradient(135deg, rgba(map.get($colors, secondary), 0.1) 0%, rgba(map.get($colors, primary), 0.1) 100%);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(map.get($colors, secondary), 0.2);
+  
+  .cta-content h4 {
+    color: map.get($colors, content);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    
+    @include mobile {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .cta-content p {
+    color: map.get($colors, content);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    
+    @include mobile {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .btn {
+      padding: 0.875rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      
+      &.btn-primary {
+        background: map.get($colors, secondary);
+        color: map.get($colors, white);
+        border: 2px solid map.get($colors, secondary);
+        
+        &:hover {
+          background: color.adjust(map.get($colors, secondary), $lightness: -10%);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(map.get($colors, secondary), 0.4);
+        }
+      }
+      
+      &.btn-outline {
+        background: transparent;
+        color: map.get($colors, content);
+        border: 2px solid map.get($colors, content);
+        
+        &:hover {
+          background: map.get($colors, white);
+          color: map.get($colors, content);
+          transform: translateY(-2px);
+        }
+      }
+      
+      @include mobile {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  }
+}
+
 .socials {
   @include flex-column-center;
   transition: all 0.3s ease;
+  color: map.get($colors, content);
+  text-decoration: none;
   
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
+    color: map.get($colors, content);
+    text-decoration: none;
   }
 
   i {
-    color: map.get($colors, whitesmoke);
+    color: map.get($colors, content);
     margin: 10px;
     transition: all 0.3s ease;
-    
-    &:hover {
-      transform: scale(1.1);
-    }
+  }
+  
+  h4 {
+    color: map.get($colors, content);
+    margin: 0.5rem 0 0.25rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  p {
+    color: map.get($colors, content);
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
   }
 
   @include mobile {
