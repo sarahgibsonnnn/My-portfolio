@@ -9,6 +9,11 @@ const workHeroData = {
       text: "Contact Me",
       link: "/contact",
       title: "Contact Sarah"
+    },
+     {
+      text: "View LinkedIn",
+      link: "https://www.linkedin.com/in/sarah-gibson9/",
+      title: "View Sarah's LinkedIn Profile"
     }
   ]
 };

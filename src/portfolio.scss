@@ -119,6 +119,8 @@ ul {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 
   @include mobile {
     width: 30px;
@@ -424,8 +426,6 @@ nav {
     margin-top: auto;
     justify-content: center;
   }
-
-
 
   @include mobile {
     .work-content h2 {
@@ -1033,11 +1033,23 @@ h6 a {
         font-weight: 600;
       }
       
+      h6 {
+        color: color.adjust(map.get($colors, content), $lightness: 20%);
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      
       p {
         color: color.adjust(map.get($colors, content), $lightness: 10%);
         margin: 0;
         font-size: 0.9rem;
       }
+    }
+    
+    // Early career styling - less prominent
+    &.early-career {
+      opacity: 0.75;
     }
   }
 }
@@ -1084,10 +1096,57 @@ h6 a {
       h4 {
         color: map.get($colors, content);
         margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      
+      .education-list {
+        margin-top: 2rem;
+        
+        .education-item {
+          margin-bottom: 2rem;
+          
+          h5 {
+            color: map.get($colors, white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid rgba(map.get($colors, white), 0.3);
+            padding-bottom: 0.5rem;
+          }
+          
+          .credential {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            background: rgba(map.get($colors, white), 0.1);
+            border-radius: 8px;
+            border-left: 3px solid map.get($colors, whitesmoke);
+            
+            strong {
+              color: map.get($colors, white);
+              font-weight: 600;
+              margin-bottom: 0.25rem;
+            }
+            
+            .institution {
+              color: color.adjust(map.get($colors, white), $lightness: -5%);
+              font-size: 0.95rem;
+              font-weight: 600;
+            }
+            
+            .note {
+              color: color.adjust(map.get($colors, whitesmoke));
+              font-size: 0.85rem;
+              font-style: italic;
+              margin-top: 0.25rem;
+            }
+          }
+        }
       }
       
       .text-muted {
-        color: map.get($colors, primary) !important;
+        color: map.get($colors, whitesmoke) !important;
         font-weight: 600;
         font-size: 0.9rem;
         margin-bottom: 0.75rem;

@@ -54,18 +54,21 @@ const formatDateRange = (startYear: number, startMonth: number, endYear?: number
 
 const aboutHeroData = {
   title: "👋 Hi, I'm Sarah Gibson",
-  subtitle: `Senior Product Designer & Front-End Developer | ${calculateYearsOfExperience()} Years Experience | Healthcare UX Specialist | London`,
+  subtitle: "Senior Product Designer specialising in complex, real-world digital products — with strong front-end expertise",
   buttons: [
+    {
+      text: "View Case Studies",
+      link: "/product-design",
+      title: "See product design case studies",
+      type: "primary" as const
+    },
     {
       text: "Contact Me",
       link: "/contact",
-      title: "Contact Sarah"
+      title: "Contact Sarah",
+      type: "secondary" as const,
+      inverted: true
     },
-    {
-      text: "View LinkedIn",
-      link: "https://www.linkedin.com/in/sarah-gibson9/",
-      title: "View Sarah's LinkedIn Profile"
-    }
   ]
 };
 
@@ -95,25 +98,17 @@ export default function About() {
           <div className="col-md-6 example-desc">
             <h2>Professional Summary</h2>
             <p>
-              <strong>Senior Product Designer and Front-End Developer</strong> with {calculateYearsOfExperience()} years of experience 
-              creating user-centered digital solutions. 
-              Currently driving UX innovation in the healthcare sector, designing complex systems 
-              that serve a variety of healthcare professionals daily.
+              I’m a Senior Product Designer with {calculateYearsOfExperience()} years of experience designing complex digital products used in real-world, high-stakes environments. I began my career as a medicinal chemist, working in drug discovery and development, before transitioning into the software industry — a shift driven by a desire to apply scientific problem-solving, systems thinking and user empathy to digital products at scale.
             </p>
             <p>
-              I bridge the gap between users, design and development, leading projects from user research 
-              and wireframing through to implementation. My expertise spans the complete 
-              product lifecycle, with a passion for accessible, data-driven design solutions.
+             My scientific background shapes how I approach design: I’m comfortable working with complex data, ambiguous problem spaces and evidence-led decision making. I lead end-to-end product design, from discovery and research through to delivery and iteration, collaborating closely with product managers, engineers and stakeholders to create clear, accessible and rewarding user experiences.
             </p>
-
             <p>
-              Unfortunately I do not currently have examples of my professional work to share publicly due to 
-              confidentiality agreements. However, I have built several applications during my SheCodes workshops 
-              which you can explore below.
+              Much of my work sits within regulated and sensitive domains, including healthcare and enterprise systems, where trust, usability and accessibility are critical. I focus on turning complexity into clarity, designing products that support confident decision-making and stand up to real-world use.
             </p>
             <div className="d-flex gap-2 flex-wrap">
-              <Link to="/work" title="View Sarah's work" className="btn">
-                View My Work
+              <Link to="/product-design" title="View Case Studies" className="btn">
+                View Case Studies
               </Link>
               <a 
                 href="https://www.linkedin.com/in/sarah-gibson9/" 
@@ -139,11 +134,10 @@ export default function About() {
                 <div className="experience-icon">
                   <i className="fas fa-heartbeat fa-3x"></i>
                 </div>
-                <h4>Healthcare UX Specialist</h4>
-                <p className="experience-role">Current Role</p>
+                <h4>Designing for Complexity</h4>
+            
                 <p>
-                  Leading UX design for healthcare applications, conducting stakeholder interviews 
-                  and creating complex data interfaces that improve patient outcomes and workflow efficiency.
+                 Designing products used in high-stakes and high-frequency environments, where clarity, trust and usability matter.
                 </p>
               </div>
             </div>
@@ -152,11 +146,10 @@ export default function About() {
                 <div className="experience-icon">
                   <i className="fas fa-users fa-3x"></i>
                 </div>
-                <h4>User-Centered Design</h4>
-                <p className="experience-role">{calculateYearsOfExperience()} Years</p>
+                <h4>User-Centred & Evidence-Led</h4>
+                
                 <p>
-                  Experienced in user research, persona development, journey mapping, and usability testing. 
-                  Skilled at translating user insights into intuitive, accessible designs that meet user needs.
+                 Grounding decisions in research, testing and real user behaviour rather than assumptions.
                 </p>
               </div>
             </div>
@@ -165,11 +158,9 @@ export default function About() {
                 <div className="experience-icon">
                   <i className="fas fa-code fa-3x"></i>
                 </div>
-                <h4>Front-end Development</h4>
-                <p className="experience-role">React Specialist</p>
+                <h4>From Design to Code</h4>
                 <p>
-                  Bridging design and development with experience developing modern React applications, 
-                  and responsive interfaces.
+                  Strong front-end experience enabling effective prototyping, implementation awareness and close collaboration with engineers.
                 </p>
               </div>
             </div>
@@ -192,9 +183,7 @@ export default function About() {
                   <h4>Senior Product Designer</h4>
                   <p className="company">Synanetics</p>
                   <p>
-                    Leading UX design for healthcare applications serving various clinical professionals in the NHS. Experience in designing Share Care Records, patient management applications, and patient demographic matching engines. 
-                    Conducting user research, designing complex interfaces, and 
-                    improving patient outcomes through user-centered design.
+                    Leading end-to-end product design for healthcare platforms used daily by multidisciplinary clinical teams, focusing on clarity, accessibility and workflow efficiency.
                   </p>
                   <div className="achievement-tags">
                     <span className="achievement-tag">Product design</span>
@@ -233,6 +222,17 @@ export default function About() {
                   <p>October 2018 - Beginning of {calculateYearsOfExperience()} years in UX Design & Development</p>
                 </div>
               </div>
+
+              <div className="timeline-milestone early-career">
+                <div className="milestone-icon">
+                  <i className="fas fa-flask"></i>
+                </div>
+                <div className="milestone-content">
+                  <h5>Medicinal Chemist</h5>
+                  <p className="company">Domainex</p>
+                  <p>I began my career in medicinal chemistry, after achieving a First Class Masters degree in Chemistry. I worked on drug discovery and development within regulated laboratory environments. This role developed my analytical thinking, comfort with complex data, and evidence-led approach to problem-solving — skills that now underpin my work in product design and user research.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -246,31 +246,50 @@ export default function About() {
             <div className="col-md-8">
               <div className="education-timeline">
                 <div className="timeline-item">
-                  <div className="timeline-icon">
-                    <i className="fas fa-graduation-cap"></i>
-                  </div>
+                 
                   <div className="timeline-content">
-                    <h4 className="text-white">Professional Development</h4>
-                    <p className="text-muted">SheCodes Certified</p>
+                  
                     <p className="text-light">
-                      Advanced certifications in front-end development, React, and responsive web design. 
-                      Continuous learning in modern development practices and UX methodologies.
+                      I invest heavily in continuous learning, with professional certifications across UX, UI, accessibility and front-end development. My training supports a practice grounded in inclusive design, modern development workflows and evidence-led decision making.
                     </p>
+                    
+                    <div className="education-list">
+                      <div className="education-item">
+                        <h5>Education</h5>
+                        <div className="credential">
+                          <strong>First Class MChem in Chemistry, with Biological and Medicinal Chemistry</strong>
+                          <span className="institution">University of York</span>
+                          <span className="note">Including a year in industry at Pfizer</span>
+                        </div>
+                      </div>
+                      
+                      <div className="education-item">
+                        <h5>Professional Certifications</h5>
+                        <div className="credential">
+                          <strong>Professional Diploma in UX Design</strong>
+                          <span className="institution">UX Design Institute</span>
+                        </div>
+                        <div className="credential">
+                          <strong>Professional Certificate in UI Design</strong>
+                          <span className="institution">UX Design Institute</span>
+                        </div>
+                        <div className="credential">
+                          <strong>Google UX Design Certificate</strong>
+                          <span className="institution">Google</span>
+                        </div>
+                        <div className="credential">
+                          <strong>Professional Certificate in Designing for Accessibility</strong>
+                          <span className="institution">UX Design Institute</span>
+                        </div>
+                        <div className="credential">
+                          <strong>React Development, SheCodes Responsive, Front End Development, SheCodes Plus AI</strong>
+                          <span className="institution">SheCodes</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="timeline-item">
-                  <div className="timeline-icon">
-                    <i className="fas fa-certificate"></i>
-                  </div>
-                  <div className="timeline-content">
-                    <h4 className="text-white">UX Design Expertise</h4>
-                    <p className="text-muted">Industry Experience</p>
-                    <p className="text-light">
-                      {calculateYearsOfExperience()}+ years of hands-on experience in UX/UI design across healthcare, travel, 
-                      and consumer applications with focus on accessibility and user-centered design.
-                    </p>
-                  </div>
-                </div>
+             
               </div>
             </div>
           </div>
@@ -311,12 +330,10 @@ export default function About() {
               <div className="skill-list">
                 <SkillTag text="React" variant="secondary" size="medium" />
                 <SkillTag text="TypeScript" variant="secondary" size="medium" />
-                <SkillTag text="JavaScript (ES6+)" variant="secondary" size="medium" />
                 <SkillTag text="HTML5 & CSS3" variant="secondary" size="medium" />
+                 <SkillTag text="AI" variant="secondary" size="medium" />
                 <SkillTag text="SASS/SCSS" variant="secondary" size="medium" />
                 <SkillTag text="Responsive Design" variant="secondary" size="medium" />
-                <SkillTag text="API Integration" variant="secondary" size="medium" />
-                <SkillTag text="Git Version Control" variant="secondary" size="medium" />
               </div>
             </div>
           </div>
@@ -325,15 +342,13 @@ export default function About() {
             <div className="skill-category">
               <div className="skill-header">
                 <i className="fas fa-tools fa-3x"></i>
-                <h4>Tools & Specializations</h4>
+                <h4>Tools & Specialisations</h4>
               </div>
               <div className="skill-list">
                 <SkillTag text="Healthcare UX" variant="accent" size="medium" />
-                <SkillTag text="Enterprise Design Systems" variant="accent" size="medium" />
-                <SkillTag text="Data Visualization" variant="accent" size="medium" />
-                <SkillTag text="AI Integration" variant="accent" size="medium" />
-                <SkillTag text="Adobe Creative Suite" variant="accent" size="medium" />
+                <SkillTag text="Design Systems" variant="accent" size="medium" />           
                 <SkillTag text="Figma" variant="accent" size="medium" />
+                <SkillTag text="GitHub" variant="accent" size="medium" />
                 <SkillTag text="Agile/Scrum" variant="accent" size="medium" />
                 <SkillTag text="Stakeholder Management" variant="accent" size="medium" />
               </div>
@@ -345,17 +360,16 @@ export default function About() {
       {/* Call to Action */}
       <div className="subsection">
         <div className="container text-center py-5">
-          <h3 className="text-white mb-4">Let's Work Together</h3>
+          <h3 className="text-white mb-4">Let's stay connected</h3>
           <p className="text-light mb-4 lead">
-            Ready to create exceptional user experiences? I'm available for UX consulting, 
-            product design, and full-stack development projects.
+            I enjoy connecting with people working on thoughtful digital products and exchanging perspectives on design, problem-solving and technology.
           </p>
           <div className="d-flex justify-content-center gap-3 flex-wrap">
             <Link to="/contact" className="btn btn-light">
-              Get In Touch
+              Contact me
             </Link>
-            <Link to="/work" className="btn btn-outline-light">
-              View Portfolio
+            <Link to="/product-design" className="btn btn-outline-light">
+              View Case Studies
             </Link>
           </div>
         </div>

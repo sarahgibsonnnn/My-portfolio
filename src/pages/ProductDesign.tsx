@@ -9,6 +9,11 @@ const productDesignHeroData = {
       text: "Contact Me",
       link: "/contact",
       title: "Contact Sarah"
+    },
+     {
+      text: "View LinkedIn",
+      link: "https://www.linkedin.com/in/sarah-gibson9/",
+      title: "View Sarah's LinkedIn Profile"
     }
   ]
 };
@@ -58,7 +63,7 @@ export default function ProductDesign() {
       />
 
       <div className="section">
-        <h3 className="text-center p-3">Product Design Case Studies</h3>
+        <h3 className="text-center p-3">Case Studies</h3>
         <div className="work-intro">
           <p className="text-center text-light">
             A selection of case studies demonstrating how I lead end-to-end product design in complex, real-world environments — balancing user needs, accessibility, delivery constraints and long-term product value.
