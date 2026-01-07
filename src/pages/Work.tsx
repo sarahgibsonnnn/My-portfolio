@@ -1,9 +1,9 @@
 import Hero from '../components/Hero';
-import WorkExample from '../components/WorkExample';
+import AppEmbed from '../components/AppEmbed';
 
 const workHeroData = {
-  title: "My Work",
-  subtitle: "View Examples of my work below",
+  title: "Front-end Development",
+  subtitle: "Interactive applications and coding projects",
   buttons: [
     {
       text: "Contact Me",
@@ -16,36 +16,33 @@ const workHeroData = {
 const workExamples = [
   {
     title: "AI Holiday Planner",
-    description: "Holiday planning application built during SheCodes Plus course. Showcasing my ability to design, code and develop with AI integration.",
-    imageUrl: "/images/holiday-planner.png",
-    imageAlt: "Holiday planner App showcasing front-end development and AI integration",
-    projectUrl: "https://sarahs-holiday-planner.netlify.app/",
-    linkTitle: "View Sarah's AI holiday planner application",
-    category: "AI Integration",
+    description: "Holiday planning application built during SheCodes Plus course. Showcasing my ability to design, code and develop with AI integration. Explore the interactive experience below.",
+    appUrl: "https://sarahs-holiday-planner.netlify.app/",
+    appName: "AI Holiday Planner",
     skills: ["Front-end development", "User interface", "React", "AI Integration", "Responsive Design"],
-    year: "2024"
+    overlayTitle: "AI Holiday Planner",
+    overlayDescription: "Try the interactive holiday planning experience",
+    className: "holiday-planner-embed"
   },
   {
     title: "Dictionary App: Information Architecture",
-    description: "Another application built during SheCodes Plus course. This time a dictionary application with a focused on accessibility and API integration patterns.",
-    imageUrl: "/images/dictionary-app.PNG",
-    imageAlt: "Dictionary app showing clean interface design and search functionality",
-    projectUrl: "https://sarahgibson-dictionary.netlify.app/",
-    linkTitle: "View Dictionary Application",
-    category: "Front-end Development",
-    skills: ["API", "React", "Accessibility", "Search UX", "Front-end development"],
-    year: "2024"
+    description: "Dictionary application built during SheCodes Plus course with a focus on accessibility and API integration patterns. Experience the clean search interface below.",
+    appUrl: "https://sarahgibson-dictionary.netlify.app/",
+    appName: "Dictionary App",
+    skills: ["API Integration", "React", "Accessibility", "Search UX", "Front-end development"],
+    overlayTitle: "Dictionary Application",
+    overlayDescription: "Explore word definitions and meanings",
+    className: "dictionary-embed"
   },
   {
-    title: "My first coding project: Weather Application",
-    description: "Developed a responsive weather interface using JavaScript and OpenWeather API. This was my first react application built during my SheCodes course.",
-    imageUrl: "/images/react-weather-app.PNG",
-    imageAlt: "Weather application",
-    projectUrl: "https://sarahgibson-weather-react.netlify.app/",
-    linkTitle: "View React Weather Application",
-    category: "UI Development",
-    skills: ["Responsive Design", "React", "API Integration",],
-    year: "2023"
+    title: "Weather Application: My First React Project",
+    description: "My first React application developed during SheCodes course. A responsive weather interface using JavaScript and OpenWeather API. Try the live weather search below.",
+    appUrl: "https://sarahgibson-weather-react.netlify.app/",
+    appName: "Weather App",
+    skills: ["Responsive Design", "React", "API Integration", "JavaScript"],
+    overlayTitle: "Weather Application",
+    overlayDescription: "Check current weather conditions",
+    className: "weather-embed"
   },
 ];
 
@@ -59,33 +56,37 @@ export default function Work() {
       />
 
       <div className="section">
-        <h3 className="text-center p-3">My Work</h3>
+        <h3 className="text-center p-3">Front-end Development Projects</h3>
         <div className="work-intro">
           <p className="text-center text-light">
-            Below are some examples of some applications I have built outside of work, completed during my SheCodes projects. These span front-end development and interaction design. Click to explore the live applications.
+            Interactive applications and coding projects built during my SheCodes certification. These showcase my technical skills in React, API integration, and responsive design. Click to explore the live applications.
           </p>
         </div>
       </div>
 
       
 
-      <div className="container">
-        <div className="row">
-          {workExamples.map((work, index) => (
-            <WorkExample
-              key={index}
-              title={work.title}
-              description={work.description}
-              imageUrl={work.imageUrl}
-              imageAlt={work.imageAlt}
-              projectUrl={work.projectUrl}
-              linkTitle={work.linkTitle}
-              category={work.category}
-              skills={work.skills}
-              year={work.year}
-            />
-          ))}
-        </div>
+      <div className="interactive-applications">
+        {workExamples.map((work, index) => (
+          <div key={index} className={`app-embed-section ${work.className}`}>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-12">                  
+                  <AppEmbed
+                    title={work.title}
+                    description={work.description}
+                    appUrl={work.appUrl}
+                    appName={work.appName}
+                    skills={work.skills}
+                    overlayTitle={work.overlayTitle}
+                    overlayDescription={work.overlayDescription}
+                    className={work.className}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );

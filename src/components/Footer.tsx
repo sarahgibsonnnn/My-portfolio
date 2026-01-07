@@ -24,16 +24,7 @@ export default function Footer() {
           <p className="d-none d-sm-block">sarahalgibson95@gmail.com</p>
         </a>
 
-        <a 
-          href="https://www.shecodes.io/graduates/7683-sarah-gibson" 
-          target="_blank" 
-          title="Certificates" 
-          className="socials btn"
-        >
-          <i className="fas fa-certificate fa-2x"></i>
-          <h4 className="d-none d-md-block">Certificates</h4>
-          <p className="d-none d-sm-block">SheCodes Profile</p>
-        </a>
+  
       </div>
       
       <div className="signature">

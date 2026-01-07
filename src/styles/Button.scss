@@ -1,0 +1,113 @@
+@use 'sass:map';
+@use 'sass:color';
+
+// Import colors from main portfolio file
+$colors: (
+  primary: #F28907,
+  primary-hover: #F29F05,
+  secondary: #0D6BA6,
+  content: #023859,
+  background: white,
+  accent: #F27649,
+  white: white,
+  whitesmoke: whitesmoke
+);
+
+// Button styles
+.btn {
+  margin: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  
+  &.btn-primary {
+    background: map.get($colors, primary);
+    color: map.get($colors, white);
+    border-color: map.get($colors, primary);
+    
+    &:hover {
+      background: color.adjust(map.get($colors, primary), $lightness: -10%);
+      border-color: color.adjust(map.get($colors, primary), $lightness: -10%);
+      transform: translateY(-2px);
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(map.get($colors, primary), 0.25);
+    }
+  }
+  
+  &.btn-outline-primary {
+    background: transparent;
+    color: map.get($colors, primary);
+    border-color: map.get($colors, primary);
+    
+    &:hover {
+      background: map.get($colors, primary);
+      color: map.get($colors, white);
+      transform: translateY(-2px);
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(map.get($colors, primary), 0.25);
+    }
+  }
+  
+  &.btn-outline-light {
+    background: transparent;
+    color: map.get($colors, white);
+    border-color: map.get($colors, white);
+    
+    &:hover {
+      background: map.get($colors, white);
+      color: map.get($colors, primary);
+      transform: translateY(-2px);
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(map.get($colors, white), 0.25);
+    }
+  }
+  
+  &.btn-link {
+    background: transparent;
+    color: map.get($colors, primary);
+    border: none;
+    text-decoration: none;
+    
+    &:hover {
+      color: color.adjust(map.get($colors, primary), $lightness: -10%);
+      text-decoration: underline;
+      transform: translateY(-2px);
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(map.get($colors, primary), 0.25);
+      text-decoration: none;
+    }
+  }
+  
+  &.btn-link-light {
+    background: transparent;
+    color: map.get($colors, white);
+    border: none;
+    text-decoration: none;
+    
+    &:hover {
+      color: rgba(map.get($colors, white), 0.8);
+      text-decoration: underline;
+      transform: translateY(-2px);
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(map.get($colors, white), 0.25);
+      text-decoration: none;
+    }
+  }
+  
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

@@ -29,11 +29,20 @@ export default function Header() {
         </li>
         <li>
           <Link 
+            to="/product-design" 
+            title="Product Design Case Studies" 
+            className={`menu-option ${location.pathname === '/product-design' ? 'active' : ''}`}
+          >
+            Product Design
+          </Link>
+        </li>
+        <li>
+          <Link 
             to="/work" 
-            title="Sarah's work" 
+            title="Front-end Development Projects" 
             className={`menu-option ${location.pathname === '/work' ? 'active' : ''}`}
           >
-            Work
+            From Design to Code
           </Link>
         </li>
         <li>
