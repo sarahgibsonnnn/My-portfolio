@@ -13,7 +13,7 @@ const caseStudies = [
     subtitle: "Modernising a critical legacy clinical system",
     description: "Redesign of a 20+ year-old therapy management system relied on daily by multidisciplinary clinicians. The goal was to improve usability and reliability while maintaining familiarity and minimising disruption to care delivery.",
     status: "Coming Soon",
-    image: "images/coming-soon.jpg",
+    image: "images/patient-management-hero.png",
     skills: ["User Research", "Co-design workshops", "Interaction design", "Prototyping", "Design systems", "Accessibility"],
     focus: "Legacy redesign, clinical workflows, accessibility, phased delivery",
     duration: "Ongoing",

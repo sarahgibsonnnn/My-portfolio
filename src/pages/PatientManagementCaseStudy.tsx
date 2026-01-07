@@ -63,6 +63,20 @@ export default function PatientManagementCaseStudy() {
                 <div className="key-insight">
                   <strong>Key Insight:</strong> Clinicians needed improvements, but they also needed familiarity, confidence and trust. A full "rip and replace" redesign would have posed significant risk in a live clinical environment.
                 </div>
+                
+                <div className="legacy-interface-showcase">
+                  <img 
+                    src="/images/legacy-patient-management-interface.png" 
+                    alt="Legacy patient management system interface"
+                    className="legacy-interface-image"
+                  />
+                  <p className="image-caption">
+                    Example of a legacy patient management interface, illustrating the density and complexity clinicians navigated daily.
+                  </p>
+                  <p>
+                    This system had evolved over many years and supported a wide range of clinical workflows. While powerful, its density and reliance on colour, abbreviations and overlapping information increased cognitive load — particularly for new or infrequent users.
+                  </p>
+                </div>
               </section>
 
           <section className="role section-card">

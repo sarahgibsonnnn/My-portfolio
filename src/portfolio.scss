@@ -2007,6 +2007,40 @@ h6 a {
       border-radius: 0 8px 8px 0;
     }
     
+    .legacy-interface-showcase {
+      margin-top: 2rem;
+      
+      .legacy-interface-image {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        opacity: 0.75;
+        filter: grayscale(30%) blur(0.5px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+      }
+      
+      .image-caption {
+        font-size: 0.9rem;
+        color: color.adjust(map.get($colors, content), $lightness: 20%);
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+      }
+      
+      p:last-child {
+        margin-top: 1rem;
+        padding: 1rem 1.5rem;
+        background: rgba(map.get($colors, secondary), 0.04);
+        border-radius: 8px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+    
     .case-study-nav {
       display: flex;
       justify-content: space-between;
