@@ -35,11 +35,13 @@ const caseStudies = [
     subtitle: "Discovery-led research across health and social care",
     description: "Led the first phase of discovery for a national interoperability initiative exploring how Digital Social Care Records can be connected with health records to improve continuity of care. Research included site visits to residential care homes and interviews with domiciliary care workers, supported living staff and registered nurses to identify real-world data sharing needs and priority use cases.",
     status: "Coming Soon",
-    image: "images/coming-soon.jpg",
+    image: "images/scip-hero.png",
     skills: ["User interviews", "Field research", "Affinity mapping", "Stakeholder engagement", "Journey mapping", "Problem framing"],
     focus: "User research, affinity mapping, interoperability needs",
     duration: "Ongoing",
-    role: "Senior Product Designer (Discovery Lead)"
+    role: "Senior Product Designer (Discovery Lead)",
+    link: "/social-care-interoperability-case-study",
+    buttonTitle: "View Social Care Interoperability case study"
   },
   {
     title: "Designing for Accessibility in Complex Systems",
@@ -171,8 +173,8 @@ export default function ProductDesign() {
                 <div className="case-study-cta">
                   <Button
                     text="View case study"
-                    link="#"
-                    title="View case study"
+                    link={study.link || "#"}
+                    title={study.buttonTitle || `View ${study.title} case study`}
                     variant="primary"
            
                   />
@@ -185,15 +187,14 @@ export default function ProductDesign() {
         <div className="row mt-5">
           <div className="col-12 text-center">
             <div className="coming-soon-notice">
-              <h4>Full Case Studies Coming Soon</h4>
+              <h4>More Case Studies Coming Soon</h4>
               <p className="text-muted">
-                I'm currently preparing detailed case studies that showcase my design process, 
-                user research methodologies, and the business impact of my work. 
-                These will include wireframes, prototypes, user testing results, and before/after metrics.
+                I have now published the Social Care Interoperability discovery case study and I am currently preparing additional detailed write-ups that showcase my design process,
+                user research methodologies, and the business impact of my work.
               </p>
               <p className="text-muted">
-                <strong>What you can expect:</strong> Problem definition, user research insights, 
-                design iterations, usability testing results, and measurable outcomes.
+                <strong>What you can expect next:</strong> Problem definition, user research insights,
+                design iterations, usability testing results, wireframes, prototypes, and measurable outcomes.
               </p>
             </div>
           </div>

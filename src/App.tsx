@@ -6,6 +6,7 @@ import About from './pages/About'
 import Work from './pages/Work'
 import ProductDesign from './pages/ProductDesign'
 import PatientManagementCaseStudy from './pages/PatientManagementCaseStudy'
+import SocialCareInteroperabilityCaseStudy from './pages/SocialCareInteroperabilityCaseStudy'
 import Contact from './pages/Contact'
 import './portfolio.scss'
 
@@ -20,6 +21,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/product-design" element={<ProductDesign />} />
             <Route path="/patient-management-case-study" element={<PatientManagementCaseStudy />} />
+            <Route path="/social-care-interoperability-case-study" element={<SocialCareInteroperabilityCaseStudy />} />
             <Route path="/work" element={<Work />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
